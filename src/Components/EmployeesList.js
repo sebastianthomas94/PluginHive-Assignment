@@ -1,8 +1,10 @@
 import React from "react";
 import { Table } from "reactstrap";
 
-const EmployeesList = () =>{
-  const employees = [
+const EmployeesList = ({EmpDetails}) =>{
+
+
+  var employees = [
     {
       Name: "Sebatian",
       ID: 1,
@@ -27,12 +29,15 @@ const EmployeesList = () =>{
       Name: "Lando Norris",
       ID: 5,
 	  Post:"Driver"
-    }
+    },
+
 	
   ];
-
+  employees.push(EmpDetails);
+  console.log(EmpDetails);
   return (
 
+    <div style={{margin :"30px"}}>
           <Table>
             <thead>
               <tr>
@@ -60,10 +65,13 @@ const EmployeesList = () =>{
              
             </tbody>
           </Table>
+          
+      </div>
        
      );
 
-  
+    
 }
 
 export default EmployeesList;
+
